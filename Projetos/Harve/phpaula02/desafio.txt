@@ -1,0 +1,3 @@
+"Criar uma classe ContaCorrente. A classe deve ter os seguintes atributos: nome, saldo e número da conta.
+
+Criar duas instâncias dessa classe para representar dois clientes distintos. Em seguida, realizar transferência de valores entre eles. Durante a transferência, deve-se validar se há saldo suficiente na conta de origem. Caso não haja saldo suficiente, a transferência não deve ser realizada e uma exceção deve ser lançada."

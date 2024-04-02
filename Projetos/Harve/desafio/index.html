@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Transferência de Conta Corrente</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Transferência de Conta Corrente</h1>
+
+      <!-- Formulário para criar nova conta -->
+      <h2>Criar Nova Conta</h2>
+      <form action="criar_conta.php" method="post">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required /><br /><br />
+
+        <label for="saldo">Saldo Inicial:</label>
+        <input type="text" id="saldo" name="saldo" required /><br /><br />
+
+        <label for="numero_conta">Número da Conta:</label>
+        <input
+          type="text"
+          id="numero_conta"
+          name="numero_conta"
+          required
+        /><br /><br />
+
+        <input type="submit" value="Criar Conta" />
+      </form>
+
+      <hr />
+
+      <!-- Formulário para transferência de valores -->
+      <h2>Realizar Transferência</h2>
+      <form action="transferir.php" method="post">
+        <label for="conta_origem">Conta de Origem:</label>
+        <input
+          type="text"
+          id="conta_origem"
+          name="conta_origem"
+          required
+        /><br /><br />
+
+        <label for="conta_destino">Conta de Destino:</label>
+        <input
+          type="text"
+          id="conta_destino"
+          name="conta_destino"
+          required
+        /><br /><br />
+
+        <label for="valor">Valor:</label>
+        <input type="text" id="valor" name="valor" required /><br /><br />
+
+        <input type="submit" value="Transferir" />
+      </form>
+    </div>
+  </body>
+</html>
