@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        width: 50%;
+        margin: 0 auto;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      input[type="text"] {
+        width: 100%;
+        padding: 5px;
+        margin-top: 5px;
+        box-sizing: border-box;
+      }
+
+      button[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+      }
+
+      button[type="submit"]:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <form action="cad.php" method="get">
+        <label for="nome"
+          >Nome <input type="text" name="nome" id="nome "
+        /></label>
+        <label for="nome"
+          >Sobre Nome <input type="text" name="sobreNome" id="sobreNome"
+        /></label>
+        <input type="submit" value="Enviar" />
+      </form>
+    </div>
+  </body>
+</html>
