@@ -30,7 +30,7 @@
             color: #007bff;
         }
 
-        button {
+        .bt {
             padding: 10px 20px;
             border: none;
             background-color: #007bff;
@@ -41,7 +41,7 @@
             transition: background-color 0.3s ease;
         }
 
-        button:hover {
+        .bt:hover {
             background-color: #0056b3;
         }
 
@@ -55,9 +55,24 @@
 
 <body>
     <div class="container">
-        <h1>Sorteio de Números entre 1 e 100</h1>
-        <button onclick="location.reload()">Sortear</button>
-        <p>Número Sorteado: <?php echo rand(1, 100); ?>
+        <h1>Coverter de real pra dolar</h1>
+        <form action="index.php" method="get">
+            <label for="real">Real: <input type="number" name="real" id="real"></label>
+            <br>
+            <input class="bt" type="submit" value="Converter">
+        </form>
+        <?php
+        $inicio = date("m-d-Y", strtotime("- 7 days"));
+        $fim = date("m-d-Y");
+        $url = 'https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarPeriodo(dataInicial=@dataInicial,dataFinalCotacao=@dataFinalCotacao)?@dataInicial=\'' . $inicio . '\'&@dataFinalCotacao=\'' . $fim . '\'&$top=1&$orderby=dataHoraCotacao%20desc&$format=json&$select=cotacaoCompra,cotacaoVenda,dataHoraCotacao';
+
+        $dados = json_decode(file_get_contents($url), true);
+        $cotacao = $dados["value"][0]["cotacaoCompra"];
+        $num = $_GET['real'];
+        $num *= number_format($cotacao, 2);
+        echo "<p>O valor em dolar e $" . $num . " Dolares</p>";
+        ?>
+
     </div>
 </body>
 
